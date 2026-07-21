@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int a[]={1,2,3,4,5};
+    int n=sizeof(a)/sizeof(int);
+    int b[]={6,7,8,9,10};
+    int m=sizeof(b)/sizeof(int);
+    int k[1000];
+    int index=0;
+    int i=0;
+    int j=0;
+  while(i<n && j<m){
+    if(a[i]<b[j]){
+          k[index]=a[i];
+        i++;
+        index ++;
+    }
+    else{
+    k[index]=b[j];
+        j++;
+        index++;
+    }
+    }
+    while(i<n){
+        k[index]=a[i];
+        i++;
+        index++;
+    }
+    while(j<m){
+        k[index]=b[j];
+        j++;
+        index ++;
+
+    }
+    for(int x=0;x<index;x++){
+        cout << k[x];
+    }
+    return 0;
+    }
